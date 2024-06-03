@@ -1,0 +1,56 @@
+.areaContainer {
+    text-align: center;
+}
+.area {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border: 1px solid #ddd;
+    box-sizing: content-box;
+    margin: 1em auto;
+}
+
+.cell {
+    width: 50px;
+    height: 50px;
+    box-sizing: border-box;
+    position: relative;
+    border: 1px solid #eee;
+}
+
+.bomb {
+    width: 100%;
+    height: 100%;
+}
+
+.bomb_timer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    padding-top: 40%;
+    text-align: center;
+}
+
+.zombie {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+    height: 100%;
+    transform: scaleX(-1);
+}
+
+.button {
+    padding: 0.5em;
+    border: 1px solid #ddd;
+    border-radius: 0.5em;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.score {
+    text-align: center;
+}
