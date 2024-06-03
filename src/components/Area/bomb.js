@@ -12,7 +12,7 @@ const Bomb = props => {
             props.bombExplodeEvent('some key?');
         }
     }
-
+//first time bomb component rendering start tick, and then never again 
     useEffect(() => {
         setTimeout(() => tick(), 1000);
     });

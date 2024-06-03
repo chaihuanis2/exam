@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Area from './components/Area'
-import {ZombieDepoProvider} from "./components/Area/zombieDepo";
+import {ZombieDepoProvider} from "./components/Area/zombieDepo"; 
 import {BombsDepoProvider} from "./components/Area/bombsDepo";
 
 function App() {

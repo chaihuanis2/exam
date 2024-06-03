@@ -7,6 +7,7 @@ import Bomb from "./bomb";
 import Zombie from "./zombie";
 
 const Cell = props => {
+    //import global functions that are written in the context
     const BombsDepo = useContext(BombsDepoContext);
     const ZombieDepo = useContext(ZombieDepoContext);
 
@@ -19,12 +20,12 @@ const Cell = props => {
             setBomb();
         }
     }
-
+//bomb explodes, bomb image dissapears, to give option to add one more bomb, sets red bg for a second
     const bombExplodeEventHandler = () => {
         ZombieDepo.bombExploded(props.x, props.y);
         BombsDepo.unsetBomb(props.x, props.y);
         setBombChild(null);
-        setBgColor('red');
+        setBgColor('red'); 
         setTimeout(() => setBgColor(''), 1000);
     }
 
@@ -63,45 +64,4 @@ const Cell = props => {
 
 export default Cell;
 
-// //varaint2 with reducer, working
-// import React, {useState, useContext, useReducer} from 'react';
-//
-// import {BombsDepoContext} from "./bombsDepo";
-// import styles from './style.css';
-//
-// const stateReducer = (state, action) => {
-// // state => last state
-//     if(action.type === 'CLICK') {
-//         return {
-//             bgColor: 'green',
-//             content: <div>{action.val}</div>
-//         }
-//     }
-//     return {
-//         bgColor: '',
-//         content: null
-//     }
-// };
-//
-// const Cell = props => {
-//     const [someState, dispatchState] = useReducer(stateReducer, {
-//         bgColor: '',
-//         content: null
-//     });
-//
-//     const BombsDepo = useContext(BombsDepoContext);
-//
-//     const clickHandler = () => {
-//
-//         dispatchState({type: 'CLICK', val: 'xz2'});
-//     }
-//
-//     return (
-//         <div className={styles.cell} onClick={clickHandler} style={{backgroundColor: someState.bgColor}}>
-//             {someState.content}
-//         </div>
-//     );
-// };
-//
-// export default Cell;
 

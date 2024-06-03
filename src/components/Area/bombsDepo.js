@@ -10,7 +10,8 @@ const BombsDepoProvider = props => {
     let bombs = [];
 
     const canSetBomb = (cellX, cellY) => {
-        return bombs.length < 5 && !getBombDataByCoordinates(cellX, cellY);
+        //only 5 bombs maximum allowed
+        return bombs.length < 5 && !getBombDataByCoordinates(cellX, cellY); 
     }
 
     const setBomb = (cellX, cellY) => {
@@ -22,7 +23,6 @@ const BombsDepoProvider = props => {
         }
     }
 
-    //todo slow? use index?
     const getBombDataByCoordinates = (x, y) => {
         for (let i = 0; i < bombs.length; i++) {
             if (bombs[i].x === x && bombs[i].y === y) {
